@@ -66,6 +66,12 @@ class EasyDateTimeLine extends StatefulWidget {
   /// A `String` that represents the locale code to use for formatting the dates in the timeline.
   final String locale;
 
+  ///Фоновый цвет month picker
+  final Color backgroundColorMonth;
+
+  ///Иконка выборки month picker
+  final Icon iconDropdown;
+
   @override
   State<EasyDateTimeLine> createState() => _EasyDateTimeLineState();
 }
@@ -179,11 +185,8 @@ class _EasyDateTimeLineState extends State<EasyDateTimeLine> {
         locale: widget.locale,
         onMonthChange: _onMonthChange,
         style: _headerProps.monthStyle,
-        backgroundColor: Colors.blue,
-        iconDropdown: const Icon(
-          Icons.keyboard_arrow_down_rounded,
-          color: Colors.black,
-        ),
+        backgroundColor: widget.backgroundColorMonth,
+        iconDropdown: widget.iconDropdown,
       ),
     );
   }
