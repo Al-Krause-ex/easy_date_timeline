@@ -77,6 +77,7 @@ class _EasyDateTimeLineState extends State<EasyDateTimeLine> {
   late ValueNotifier<DateTime?> _focusedDateListener;
 
   DateTime get initialDate => widget.initialDate;
+
   @override
   void initState() {
     // Init easy date timeline locale
@@ -137,15 +138,13 @@ class _EasyDateTimeLineState extends State<EasyDateTimeLine> {
                     bottom: EasyConstants.timelinePadding,
                   ),
               child: Row(
-                mainAxisAlignment: _headerProps.centerHeader == true
-                    ? MainAxisAlignment.center
-                    : MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SelectedDateWidget(
-                    date: focusedDate ?? initialDate,
-                    locale: widget.locale,
-                    headerProps: _headerProps,
-                  ),
+                  // SelectedDateWidget(
+                  //   date: focusedDate ?? initialDate,
+                  //   locale: widget.locale,
+                  //   headerProps: _headerProps,
+                  // ),
                   if (_showMonthPicker(pickerType: MonthPickerType.dropDown))
                     child!,
                   if (_showMonthPicker(pickerType: MonthPickerType.switcher))
@@ -180,6 +179,11 @@ class _EasyDateTimeLineState extends State<EasyDateTimeLine> {
         locale: widget.locale,
         onMonthChange: _onMonthChange,
         style: _headerProps.monthStyle,
+        backgroundColor: Colors.blue,
+        iconDropdown: const Icon(
+          Icons.keyboard_arrow_down_rounded,
+          color: Colors.black,
+        ),
       ),
     );
   }

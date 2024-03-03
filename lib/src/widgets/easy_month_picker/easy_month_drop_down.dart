@@ -11,6 +11,8 @@ class EasyMonthDropDown extends StatelessWidget {
     this.onMonthChange,
     required this.locale,
     this.style,
+    required this.backgroundColor,
+    required this.iconDropdown,
   });
 
   /// The currently selected month.
@@ -25,28 +27,39 @@ class EasyMonthDropDown extends StatelessWidget {
   /// The text style applied to the month string.
   final TextStyle? style;
 
+  final Color backgroundColor;
+  final Icon iconDropdown;
+
   @override
   Widget build(BuildContext context) {
-    return DropdownButtonHideUnderline(
-      child: DropdownButton<EasyMonth>(
-        borderRadius: const BorderRadius.all(
-          Radius.circular(
-            EasyConstants.monthDropDownRadius,
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(100),
+        color: backgroundColor,
+      ),
+      child: DropdownButtonHideUnderline(
+        child: DropdownButton<EasyMonth>(
+          borderRadius: const BorderRadius.all(
+            Radius.circular(
+              EasyConstants.monthDropDownRadius,
+            ),
           ),
+          icon: iconDropdown,
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          elevation: EasyConstants.monthDropDownElevation,
+          value: value,
+          style: style,
+          items: EasyDateUtils.getYearMonths(DateTime.now(), locale)
+              .map(
+                (month) => DropdownMenuItem<EasyMonth>(
+                  value: month,
+                  child: Text(month.name),
+                ),
+              )
+              .toList(),
+          onChanged: onMonthChange,
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 12.0),
-        elevation: EasyConstants.monthDropDownElevation,
-        value: value,
-        style: style,
-        items: EasyDateUtils.getYearMonths(DateTime.now(), locale)
-            .map(
-              (month) => DropdownMenuItem<EasyMonth>(
-                value: month,
-                child: Text(month.name),
-              ),
-            )
-            .toList(),
-        onChanged: onMonthChange,
       ),
     );
   }
