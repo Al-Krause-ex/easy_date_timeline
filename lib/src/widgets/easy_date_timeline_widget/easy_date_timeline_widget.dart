@@ -24,8 +24,8 @@ class EasyDateTimeLine extends StatefulWidget {
     required this.backgroundColorMonth,
     required this.foregroundColorMonth,
     required this.iconDropdown,
-    this.heightMonthPicker = 140.0,
-    this.widthMonthPicker = 43.0,
+    this.heightMonthPicker = 43.0,
+    this.widthMonthPicker = 140.0,
   });
 
   /// Represents the initial date for the timeline widget.

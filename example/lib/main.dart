@@ -253,8 +253,6 @@ class MyHomePage extends StatelessWidget {
       },
       backgroundColorMonth: Colors.red,
       foregroundColorMonth: Colors.white,
-      widthMonthPicker: 105,
-      heightMonthPicker: 43,
       iconDropdown: const Icon(Icons.access_time_outlined),
       locale: "ru",
       dayProps: const EasyDayProps(
