@@ -46,34 +46,34 @@ class MyHomePage extends StatelessWidget {
             const Divider(
               height: 32,
             ),
-            _mainExample(),
-            const SizedBox(
-              height: 32.0,
-            ),
-            _customBackgroundExample(),
-            const SizedBox(
-              height: 32.0,
-            ),
-            _changeTodyHighlightColorExample(),
-            const SizedBox(
-              height: 32.0,
-            ),
-            _changeDayStructureExample(),
-            const SizedBox(
-              height: 32.0,
-            ),
-            _landscapeViewExample(),
-            const SizedBox(
-              height: 32.0,
-            ),
-            _localeExample(),
-            const SizedBox(
-              height: 32.0,
-            ),
-            _changeHeaderAppearanceExample(),
-            const SizedBox(
-              height: 32.0,
-            ),
+            // _mainExample(),
+            // const SizedBox(
+            //   height: 32.0,
+            // ),
+            // _customBackgroundExample(),
+            // const SizedBox(
+            //   height: 32.0,
+            // ),
+            // _changeTodyHighlightColorExample(),
+            // const SizedBox(
+            //   height: 32.0,
+            // ),
+            // _changeDayStructureExample(),
+            // const SizedBox(
+            //   height: 32.0,
+            // ),
+            // _landscapeViewExample(),
+            // const SizedBox(
+            //   height: 32.0,
+            // ),
+            // _localeExample(),
+            // const SizedBox(
+            //   height: 32.0,
+            // ),
+            // _changeHeaderAppearanceExample(),
+            // const SizedBox(
+            //   height: 32.0,
+            // ),
             _customizeDayAppearanceExample(),
             const SizedBox(
               height: 32.0,
@@ -84,158 +84,166 @@ class MyHomePage extends StatelessWidget {
     );
   }
 
-  EasyDateTimeLine _mainExample() {
-    return EasyDateTimeLine(
-      initialDate: DateTime.now(),
-      onDateChange: (selectedDate) {
-        //`selectedDate` the new date selected.
-      },
-      backgroundColorMonth: Colors.blue,
-      iconDropdown: Icon(Icons.access_time_outlined),
-    );
-  }
-
-  EasyDateTimeLine _customBackgroundExample() {
-    return EasyDateTimeLine(
-      initialDate: DateTime.now(),
-      onDateChange: (selectedDate) {
-        //`selectedDate` the new date selected.
-      },
-      backgroundColorMonth: Colors.blue,
-      iconDropdown: Icon(Icons.access_time_outlined),
-      headerProps: const EasyHeaderProps(
-        monthPickerType: MonthPickerType.switcher,
-        dateFormatter: DateFormatter.fullDateDMY(),
-      ),
-      dayProps: const EasyDayProps(
-        dayStructure: DayStructure.dayStrDayNum,
-        activeDayStyle: DayStyle(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(8)),
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color(0xff3371FF),
-                Color(0xff8426D6),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  EasyDateTimeLine _changeTodyHighlightColorExample() {
-    return EasyDateTimeLine(
-      initialDate: DateTime.now(),
-      onDateChange: (selectedDate) {
-        //`selectedDate` the new date selected.
-      },
-      backgroundColorMonth: Colors.blue,
-      iconDropdown: Icon(Icons.access_time_outlined),
-      activeColor: const Color(0xff85A389),
-      dayProps: const EasyDayProps(
-        todayHighlightStyle: TodayHighlightStyle.withBackground,
-        todayHighlightColor: Color(0xffE1ECC8),
-      ),
-    );
-  }
-
-  EasyDateTimeLine _changeDayStructureExample() {
-    return EasyDateTimeLine(
-      initialDate: DateTime.now(),
-      onDateChange: (selectedDate) {
-        //`selectedDate` the new date selected.
-      },
-      backgroundColorMonth: Colors.blue,
-      iconDropdown: Icon(Icons.access_time_outlined),
-      activeColor: const Color(0xffFFBF9B),
-      headerProps: const EasyHeaderProps(
-        dateFormatter: DateFormatter.monthOnly(),
-      ),
-      dayProps: const EasyDayProps(
-        height: 56.0,
-        width: 56.0,
-        dayStructure: DayStructure.dayNumDayStr,
-        inactiveDayStyle: DayStyle(
-          borderRadius: 48.0,
-          dayNumStyle: TextStyle(
-            fontSize: 18.0,
-          ),
-        ),
-        activeDayStyle: DayStyle(
-          dayNumStyle: TextStyle(
-            fontSize: 18.0,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-    );
-  }
-
-  EasyDateTimeLine _localeExample() {
-    return EasyDateTimeLine(
-      initialDate: DateTime.now(),
-      onDateChange: (selectedDate) {
-        //`selectedDate` the new date selected.
-      },
-      backgroundColorMonth: Colors.blue,
-      iconDropdown: Icon(Icons.access_time_outlined),
-      activeColor: const Color(0xffB04759),
-      locale: "ar",
-    );
-  }
-
-  EasyDateTimeLine _landscapeViewExample() {
-    return EasyDateTimeLine(
-      initialDate: DateTime.now(),
-      onDateChange: (selectedDate) {
-        //`selectedDate` the new date selected.
-      },
-      backgroundColorMonth: Colors.blue,
-      iconDropdown: Icon(Icons.access_time_outlined),
-      activeColor: const Color(0xff116A7B),
-      dayProps: const EasyDayProps(
-        landScapeMode: true,
-        activeDayStyle: DayStyle(
-          borderRadius: 48.0,
-        ),
-        dayStructure: DayStructure.dayStrDayNum,
-      ),
-      headerProps: const EasyHeaderProps(
-        dateFormatter: DateFormatter.fullDateDMonthAsStrY(),
-      ),
-    );
-  }
-
-  EasyDateTimeLine _changeHeaderAppearanceExample() {
-    return EasyDateTimeLine(
-      initialDate: DateTime.now(),
-      onDateChange: (selectedDate) {
-        //`selectedDate` the new date selected.
-      },
-      activeColor: const Color(0xff37306B),
-      headerProps: const EasyHeaderProps(
-        monthPickerType: MonthPickerType.switcher,
-        dateFormatter: DateFormatter.fullDateDayAsStrMY(),
-      ),
-      backgroundColorMonth: Colors.blue,
-      iconDropdown: Icon(Icons.access_time_outlined),
-      dayProps: const EasyDayProps(
-        activeDayStyle: DayStyle(
-          borderRadius: 32.0,
-        ),
-        inactiveDayStyle: DayStyle(
-          borderRadius: 32.0,
-        ),
-      ),
-      timeLineProps: const EasyTimeLineProps(
-        hPadding: 16.0, // padding from left and right
-        separatorPadding: 16.0, // padding between days
-      ),
-    );
-  }
+  // EasyDateTimeLine _mainExample() {
+  //   return EasyDateTimeLine(
+  //     initialDate: DateTime.now(),
+  //     onDateChange: (selectedDate) {
+  //       //`selectedDate` the new date selected.
+  //     },
+  //     backgroundColorMonth: Colors.blue,
+  //     foregroundColorMonth: Colors.white,
+  //     iconDropdown: const Icon(Icons.access_time_outlined),
+  //   );
+  // }
+  //
+  // EasyDateTimeLine _customBackgroundExample() {
+  //   return EasyDateTimeLine(
+  //     initialDate: DateTime.now(),
+  //     onDateChange: (selectedDate) {
+  //       //`selectedDate` the new date selected.
+  //     },
+  //     backgroundColorMonth: Colors.blue,
+  //     foregroundColorMonth: Colors.white,
+  //     iconDropdown: const Icon(Icons.access_time_outlined),
+  //     headerProps: const EasyHeaderProps(
+  //       monthPickerType: MonthPickerType.switcher,
+  //       dateFormatter: DateFormatter.fullDateDMY(),
+  //       monthStyle: TextStyle(color: Colors.white),
+  //     ),
+  //     dayProps: const EasyDayProps(
+  //       dayStructure: DayStructure.dayStrDayNum,
+  //       activeDayStyle: DayStyle(
+  //         decoration: BoxDecoration(
+  //           borderRadius: BorderRadius.all(Radius.circular(8)),
+  //           gradient: LinearGradient(
+  //             begin: Alignment.topCenter,
+  //             end: Alignment.bottomCenter,
+  //             colors: [
+  //               Color(0xff3371FF),
+  //               Color(0xff8426D6),
+  //             ],
+  //           ),
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
+  //
+  // EasyDateTimeLine _changeTodyHighlightColorExample() {
+  //   return EasyDateTimeLine(
+  //     initialDate: DateTime.now(),
+  //     onDateChange: (selectedDate) {
+  //       //`selectedDate` the new date selected.
+  //     },
+  //     backgroundColorMonth: Colors.blue,
+  //     foregroundColorMonth: Colors.white,
+  //     iconDropdown: const Icon(Icons.access_time_outlined),
+  //     activeColor: const Color(0xff85A389),
+  //     dayProps: const EasyDayProps(
+  //       todayHighlightStyle: TodayHighlightStyle.withBackground,
+  //       todayHighlightColor: Color(0xffE1ECC8),
+  //     ),
+  //   );
+  // }
+  //
+  // EasyDateTimeLine _changeDayStructureExample() {
+  //   return EasyDateTimeLine(
+  //     initialDate: DateTime.now(),
+  //     onDateChange: (selectedDate) {
+  //       //`selectedDate` the new date selected.
+  //     },
+  //     backgroundColorMonth: Colors.blue,
+  //     foregroundColorMonth: Colors.white,
+  //     iconDropdown: const Icon(Icons.access_time_outlined),
+  //     activeColor: const Color(0xffFFBF9B),
+  //     headerProps: const EasyHeaderProps(
+  //       dateFormatter: DateFormatter.monthOnly(),
+  //     ),
+  //     dayProps: const EasyDayProps(
+  //       height: 56.0,
+  //       width: 56.0,
+  //       dayStructure: DayStructure.dayNumDayStr,
+  //       inactiveDayStyle: DayStyle(
+  //         borderRadius: 48.0,
+  //         dayNumStyle: TextStyle(
+  //           fontSize: 18.0,
+  //         ),
+  //       ),
+  //       activeDayStyle: DayStyle(
+  //         dayNumStyle: TextStyle(
+  //           fontSize: 18.0,
+  //           fontWeight: FontWeight.bold,
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
+  //
+  // EasyDateTimeLine _localeExample() {
+  //   return EasyDateTimeLine(
+  //     initialDate: DateTime.now(),
+  //     onDateChange: (selectedDate) {
+  //       //`selectedDate` the new date selected.
+  //     },
+  //     backgroundColorMonth: Colors.blue,
+  //     foregroundColorMonth: Colors.white,
+  //     iconDropdown: const Icon(Icons.access_time_outlined),
+  //     activeColor: const Color(0xffB04759),
+  //     locale: "ru",
+  //   );
+  // }
+  //
+  // EasyDateTimeLine _landscapeViewExample() {
+  //   return EasyDateTimeLine(
+  //     initialDate: DateTime.now(),
+  //     onDateChange: (selectedDate) {
+  //       //`selectedDate` the new date selected.
+  //     },
+  //     backgroundColorMonth: Colors.blue,
+  //     foregroundColorMonth: Colors.white,
+  //     iconDropdown: const Icon(Icons.access_time_outlined),
+  //     activeColor: const Color(0xff116A7B),
+  //     dayProps: const EasyDayProps(
+  //       landScapeMode: true,
+  //       activeDayStyle: DayStyle(
+  //         borderRadius: 48.0,
+  //       ),
+  //       dayStructure: DayStructure.dayStrDayNum,
+  //     ),
+  //     headerProps: const EasyHeaderProps(
+  //       dateFormatter: DateFormatter.fullDateDMonthAsStrY(),
+  //     ),
+  //   );
+  // }
+  //
+  // EasyDateTimeLine _changeHeaderAppearanceExample() {
+  //   return EasyDateTimeLine(
+  //     initialDate: DateTime.now(),
+  //     onDateChange: (selectedDate) {
+  //       //`selectedDate` the new date selected.
+  //     },
+  //     activeColor: const Color(0xff37306B),
+  //     headerProps: const EasyHeaderProps(
+  //       monthPickerType: MonthPickerType.switcher,
+  //       dateFormatter: DateFormatter.fullDateDayAsStrMY(),
+  //     ),
+  //     backgroundColorMonth: Colors.blue,
+  //     foregroundColorMonth: Colors.white,
+  //     iconDropdown: const Icon(Icons.access_time_outlined),
+  //     dayProps: const EasyDayProps(
+  //       activeDayStyle: DayStyle(
+  //         borderRadius: 32.0,
+  //       ),
+  //       inactiveDayStyle: DayStyle(
+  //         borderRadius: 32.0,
+  //       ),
+  //     ),
+  //     timeLineProps: const EasyTimeLineProps(
+  //       hPadding: 16.0, // padding from left and right
+  //       separatorPadding: 16.0, // padding between days
+  //     ),
+  //   );
+  // }
 
   EasyDateTimeLine _customizeDayAppearanceExample() {
     return EasyDateTimeLine(
@@ -243,8 +251,12 @@ class MyHomePage extends StatelessWidget {
       onDateChange: (selectedDate) {
         //`selectedDate` the new date selected.
       },
-      backgroundColorMonth: Colors.blue,
-      iconDropdown: Icon(Icons.access_time_outlined),
+      backgroundColorMonth: Colors.red,
+      foregroundColorMonth: Colors.white,
+      widthMonthPicker: 105,
+      heightMonthPicker: 43,
+      iconDropdown: const Icon(Icons.access_time_outlined),
+      locale: "ru",
       dayProps: const EasyDayProps(
         height: 56.0,
         // You must specify the width in this case.
@@ -252,6 +264,7 @@ class MyHomePage extends StatelessWidget {
       ),
       headerProps: const EasyHeaderProps(
         dateFormatter: DateFormatter.fullDateMonthAsStrDY(),
+        monthStyle: TextStyle(color: Colors.white),
       ),
       itemBuilder: (BuildContext context, String dayNumber, dayName, monthName,
           fullDate, isSelected) {

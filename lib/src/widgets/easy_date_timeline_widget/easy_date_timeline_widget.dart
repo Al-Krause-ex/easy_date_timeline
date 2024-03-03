@@ -22,7 +22,10 @@ class EasyDateTimeLine extends StatefulWidget {
     this.activeColor,
     this.locale = "en_US",
     required this.backgroundColorMonth,
+    required this.foregroundColorMonth,
     required this.iconDropdown,
+    this.heightMonthPicker = 140.0,
+    this.widthMonthPicker = 43.0,
   });
 
   /// Represents the initial date for the timeline widget.
@@ -71,8 +74,14 @@ class EasyDateTimeLine extends StatefulWidget {
   ///Фоновый цвет month picker
   final Color backgroundColorMonth;
 
+  ///Цвет текста month picker
+  final Color foregroundColorMonth;
+
   ///Иконка выборки month picker
   final Icon iconDropdown;
+
+  final double heightMonthPicker;
+  final double widthMonthPicker;
 
   @override
   State<EasyDateTimeLine> createState() => _EasyDateTimeLineState();
@@ -188,7 +197,10 @@ class _EasyDateTimeLineState extends State<EasyDateTimeLine> {
         onMonthChange: _onMonthChange,
         style: _headerProps.monthStyle,
         backgroundColor: widget.backgroundColorMonth,
+        foregroundColor: widget.foregroundColorMonth,
         iconDropdown: widget.iconDropdown,
+        height: widget.heightMonthPicker,
+        width: widget.widthMonthPicker,
       ),
     );
   }

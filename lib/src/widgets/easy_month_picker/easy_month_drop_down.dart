@@ -12,7 +12,10 @@ class EasyMonthDropDown extends StatelessWidget {
     required this.locale,
     this.style,
     required this.backgroundColor,
+    required this.foregroundColor,
     required this.iconDropdown,
+    required this.height,
+    required this.width,
   });
 
   /// The currently selected month.
@@ -28,16 +31,23 @@ class EasyMonthDropDown extends StatelessWidget {
   final TextStyle? style;
 
   final Color backgroundColor;
+  final Color foregroundColor;
   final Icon iconDropdown;
+
+  final double width;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: height,
+      width: width,
       padding: const EdgeInsets.symmetric(horizontal: 15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(100),
         color: backgroundColor,
       ),
+      alignment: Alignment.center,
       child: DropdownButtonHideUnderline(
         child: DropdownButton<EasyMonth>(
           borderRadius: const BorderRadius.all(
@@ -45,7 +55,9 @@ class EasyMonthDropDown extends StatelessWidget {
               EasyConstants.monthDropDownRadius,
             ),
           ),
+          dropdownColor: backgroundColor,
           icon: iconDropdown,
+          isExpanded: true,
           padding: const EdgeInsets.symmetric(horizontal: 15.0),
           elevation: EasyConstants.monthDropDownElevation,
           value: value,
@@ -54,7 +66,7 @@ class EasyMonthDropDown extends StatelessWidget {
               .map(
                 (month) => DropdownMenuItem<EasyMonth>(
                   value: month,
-                  child: Text(month.name),
+                  child: Text(capitalize(month.name)),
                 ),
               )
               .toList(),
@@ -62,5 +74,9 @@ class EasyMonthDropDown extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String capitalize(String val) {
+    return "${val[0].toUpperCase()}${val.substring(1).toLowerCase()}";
   }
 }
