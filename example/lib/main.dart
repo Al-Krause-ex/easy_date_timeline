@@ -90,6 +90,8 @@ class MyHomePage extends StatelessWidget {
       onDateChange: (selectedDate) {
         //`selectedDate` the new date selected.
       },
+      backgroundColorMonth: Colors.blue,
+      iconDropdown: Icon(Icons.access_time_outlined),
     );
   }
 
@@ -99,6 +101,8 @@ class MyHomePage extends StatelessWidget {
       onDateChange: (selectedDate) {
         //`selectedDate` the new date selected.
       },
+      backgroundColorMonth: Colors.blue,
+      iconDropdown: Icon(Icons.access_time_outlined),
       headerProps: const EasyHeaderProps(
         monthPickerType: MonthPickerType.switcher,
         dateFormatter: DateFormatter.fullDateDMY(),
@@ -128,6 +132,8 @@ class MyHomePage extends StatelessWidget {
       onDateChange: (selectedDate) {
         //`selectedDate` the new date selected.
       },
+      backgroundColorMonth: Colors.blue,
+      iconDropdown: Icon(Icons.access_time_outlined),
       activeColor: const Color(0xff85A389),
       dayProps: const EasyDayProps(
         todayHighlightStyle: TodayHighlightStyle.withBackground,
@@ -142,6 +148,8 @@ class MyHomePage extends StatelessWidget {
       onDateChange: (selectedDate) {
         //`selectedDate` the new date selected.
       },
+      backgroundColorMonth: Colors.blue,
+      iconDropdown: Icon(Icons.access_time_outlined),
       activeColor: const Color(0xffFFBF9B),
       headerProps: const EasyHeaderProps(
         dateFormatter: DateFormatter.monthOnly(),
@@ -172,6 +180,8 @@ class MyHomePage extends StatelessWidget {
       onDateChange: (selectedDate) {
         //`selectedDate` the new date selected.
       },
+      backgroundColorMonth: Colors.blue,
+      iconDropdown: Icon(Icons.access_time_outlined),
       activeColor: const Color(0xffB04759),
       locale: "ar",
     );
@@ -183,6 +193,8 @@ class MyHomePage extends StatelessWidget {
       onDateChange: (selectedDate) {
         //`selectedDate` the new date selected.
       },
+      backgroundColorMonth: Colors.blue,
+      iconDropdown: Icon(Icons.access_time_outlined),
       activeColor: const Color(0xff116A7B),
       dayProps: const EasyDayProps(
         landScapeMode: true,
@@ -208,6 +220,8 @@ class MyHomePage extends StatelessWidget {
         monthPickerType: MonthPickerType.switcher,
         dateFormatter: DateFormatter.fullDateDayAsStrMY(),
       ),
+      backgroundColorMonth: Colors.blue,
+      iconDropdown: Icon(Icons.access_time_outlined),
       dayProps: const EasyDayProps(
         activeDayStyle: DayStyle(
           borderRadius: 32.0,
@@ -229,6 +243,8 @@ class MyHomePage extends StatelessWidget {
       onDateChange: (selectedDate) {
         //`selectedDate` the new date selected.
       },
+      backgroundColorMonth: Colors.blue,
+      iconDropdown: Icon(Icons.access_time_outlined),
       dayProps: const EasyDayProps(
         height: 56.0,
         // You must specify the width in this case.
